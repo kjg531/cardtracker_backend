@@ -4,7 +4,7 @@
 DJANGO_SETTINGS_MODULE=config.settings.production
 DJANGO_SECRET_KEY=hMn200Dfm2zXNPKH5Rw34VSDguJ1SKOrBDhBW8oOp2iwiJc3fkRivEroTqOd4oYv
 DJANGO_ADMIN_URL=w0pYU9hTjK8cqssyjEFmB57fgLfy89XO/
-DJANGO_ALLOWED_HOSTS=.example.com
+DJANGO_ALLOWED_HOSTS=.cardtrackr.com
 
 # Security
 # ------------------------------------------------------------------------------
