@@ -18,9 +18,9 @@ DJANGO_SERVER_EMAIL=
 
 # AWS
 # ------------------------------------------------------------------------------
-DJANGO_AWS_ACCESS_KEY_ID=
-DJANGO_AWS_SECRET_ACCESS_KEY=
-DJANGO_AWS_STORAGE_BUCKET_NAME=
+DJANGO_AWS_ACCESS_KEY_ID=AKIAUEV6DELOV4BTDCU7
+DJANGO_AWS_SECRET_ACCESS_KEY=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
+DJANGO_AWS_STORAGE_BUCKET_NAME=cardtrackr
 
 # django-allauth
 # ------------------------------------------------------------------------------
