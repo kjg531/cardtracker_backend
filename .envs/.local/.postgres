@@ -1,0 +1,7 @@
+# PostgreSQL
+# ------------------------------------------------------------------------------
+POSTGRES_HOST=postgres
+POSTGRES_PORT=5432
+POSTGRES_DB=cardtracker_backend
+POSTGRES_USER=mCfFVVzJzBiFWgojYnLEgQLQDIlBQbcB
+POSTGRES_PASSWORD=6g3L49t2d89GneYEDA6dHg3UTKlXF7hdqtMjF7RORcMZOScKfuOtY3M6bjGXeIpB
