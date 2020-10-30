@@ -15,7 +15,7 @@ on:
     paths-ignore: ["docs/**"]
 
 jobs:
-  flake8:
+  linter:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code Repository
@@ -35,18 +35,13 @@ jobs:
         run: flake8
 
   # With no caching at all the entire ci process takes 4m 30s to complete!
-  pytest:
+  tests:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code Repository
         uses: actions/checkout@v2
       - name: Build the Stack
         run: docker-compose -f local.yml build
-
-      - name: Assign DATABASE_URL
-        run: docker-compose -f local.yml run --rm django export DATABASE_URL="postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_DB}"
-      - name: Assign CELERY_BROKER_URL
-        run: docker-compose -f local.yml run --rm django export CELERY_BROKER_URL="${REDIS_URL}"
 
       - name: Make DB Migrations
         run: docker-compose -f local.yml run --rm django python manage.py migrate
