@@ -1,16 +1,16 @@
 from django.db import models
 
-from cardtracker_backend.players.models import Player, Sport
+from cardtracker_backend.players.models import Player
 
 
 class Card(models.Model):
-    sport = models.ForeignKey(Sport, on_delete=models.CASCADE, null=True)
+    sport = models.CharField(max_length=100, null=True)
     year = models.IntegerField(default=2019)
     brand = models.CharField(max_length=100, null=True)
     program = models.CharField(max_length=100, null=True)
     card_set = models.CharField(max_length=100, null=True)
     number = models.IntegerField(null=True)
-    name = models.ForeignKey(Player, on_delete=models.CASCADE, null=True)
+    name = models.CharField(max_length=100, null=True)
     team = models.CharField(max_length=100, null=True)
     sequence = models.IntegerField(null=True)
     tracked = models.BooleanField(default=False)
