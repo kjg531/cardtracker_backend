@@ -1,4 +1,5 @@
 from django.db import models
+
 from cardtracker_backend.players.models import Player, Sport
 
 
@@ -26,8 +27,3 @@ class CardSale(models.Model):
     bids = models.IntegerField(null=True)
     shipping_cost = models.IntegerField(null=True)
     image = models.URLField(max_length=100, null=True)
-
-
-#
-
-    # CURRENCY

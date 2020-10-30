@@ -1,6 +1,7 @@
 import bs4
 import requests
-link = "https://www.ebay.com/sch/i.html?Card%2520Attributes=Rookie&Product=Single&Grade=%2521%7CUngraded&_sacat=214&_nkw=jaxson+hayes+prizm+base+rookie&LH_Complete=1&_dcat=214&LH_Sold=1&_fcid=1&_sop=13"
+
+link = "https://www.ebay.com/sch/i.html?Card%2520Attributes=Rookie&Product=Single&Grade=%2521%7CUngraded&_sacat=214&_nkw=jaxson+hayes+prizm+base+rookie&LH_Complete=1&_dcat=214&LH_Sold=1&_fcid=1&_sop=13"  # noqa
 
 
 def scrapePage(page):
@@ -22,7 +23,7 @@ def scrapePage(page):
         for n in listing.find_all('h3', attrs={'class': "s-item__title"}):
             name = n.text
             print("name: ", name)
-        for l in listing.find_all('a', attrs={'class': "s-item__link"}):
+        for l in listing.find_all('a', attrs={'class': "s-item__link"}):  # noqa: E741
             link = l['href'].split("?", 1)[0]
             print("link: ", link)
         for pt in listing.find_all('span', attrs={'class': "s-item__purchase-options-with-icon"}):
@@ -30,7 +31,9 @@ def scrapePage(page):
             print("purchase_type: ", purchase_type)
         for p in listing.find_all('span', attrs={'class': "s-item__price"}):
             # Handle the following possible output types:
-            # Price Range: [<span class="POSITIVE">$0.99</span>, <span class="DEFAULT POSITIVE"> to </span>, <span class="POSITIVE">$54.99</span>]
+            # Price Range: [<span class="POSITIVE">$0.99</span>,
+            #               <span class="DEFAULT POSITIVE">to</span>,
+            #               <span class="POSITIVE">$54.99</span>]
             # Offer Accepted: [<span class="STRIKETHROUGH POSITIVE">$5.00</span>]
             # Actual Price: [<span class="POSITIVE">$7.45</span>]
             # print("price: ", price.findChildren())
