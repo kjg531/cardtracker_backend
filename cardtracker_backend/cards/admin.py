@@ -23,8 +23,8 @@ class CardResource(ModelResource):
 
 class CardAdmin(ImportExportModelAdmin):
     resource_class = CardResource
-    fields = ('sport', 'year', 'brand', 'program', 'card_set', 'number',
-              'name', 'team', 'sequence', 'tracked', 'search_url')
+    list_display = ('sport', 'year', 'brand', 'program', 'card_set', 'number',
+                    'name', 'team', 'sequence', 'tracked', 'search_url')
 
     # def view_birth_date(self, obj):
     #     return obj.birth_date
