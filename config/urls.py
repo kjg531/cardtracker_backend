@@ -5,6 +5,14 @@ from django.urls import include, path
 from django.views import defaults as default_views
 from django.views.generic import TemplateView
 
+from cardtracker_backend.cards.models import Card
+from cardtracker_backend.cards.views import CardViewSet
+from rest_framework import routers
+
+# Routers provide an easy way of automatically determining the URL conf.
+router = routers.DefaultRouter()
+router.register(r'cards', CardViewSet)
+
 urlpatterns = [
     path("", TemplateView.as_view(template_name="pages/home.html"), name="home"),
     path(
@@ -15,6 +23,8 @@ urlpatterns = [
     # User management
     path("users/", include("cardtracker_backend.users.urls", namespace="users")),
     path("accounts/", include("allauth.urls")),
+    path('', include(router.urls)),
+    path('api-auth/', include('rest_framework.urls'))
     # Your stuff: custom urls includes go here
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

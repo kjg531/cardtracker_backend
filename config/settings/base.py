@@ -70,6 +70,8 @@ THIRD_PARTY_APPS = [
     "allauth.socialaccount",
     "django_celery_beat",
     'import_export',
+    'django_filters',
+    'rest_framework',
 ]
 
 LOCAL_APPS = [
@@ -291,3 +293,13 @@ SOCIALACCOUNT_ADAPTER = "cardtracker_backend.users.adapters.SocialAccountAdapter
 
 # Your stuff...
 # ------------------------------------------------------------------------------
+
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',
+    ],
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    'PAGE_SIZE': 20
+}
