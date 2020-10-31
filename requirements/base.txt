@@ -19,3 +19,5 @@ django-redis==4.12.1  # https://github.com/jazzband/django-redis
 requests
 beautifulsoup4
 django-import-export
+djangorestframework
+django-filter
