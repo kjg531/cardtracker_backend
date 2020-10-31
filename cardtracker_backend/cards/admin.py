@@ -23,6 +23,8 @@ class CardResource(ModelResource):
 
 class CardAdmin(ImportExportModelAdmin):
     resource_class = CardResource
+    list_filter = ['sport', 'year', 'brand', 'program', 'card_set',
+                   'name', 'team', 'tracked']
     list_display = ('sport', 'year', 'brand', 'program', 'card_set', 'number',
                     'name', 'team', 'sequence', 'tracked', 'search_url')
 
